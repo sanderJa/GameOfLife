@@ -1,17 +1,22 @@
+import copy
+import random
+
+
 class Board:
     """
     Klasa reprezentująca planszę gry i jej stan.
     Przechowuje komórki i wiek komórek.
     """
-    def __init__(self, rows, cols):
+    def __init__(self, rows, cols,initial_grid):
         """Inicjalizuje pustą planszę.
         :param rows: liczba wierszy
         :param cols: liczba kolumn
         """
         self.rows = rows
         self.cols = cols
-        self.grid = [[0]*cols for _ in range(rows)]
-        self.age_grid = [[0]*cols for _ in range(rows)]
+        self.grid = [[0]*cols for _ in range(rows)] if not initial_grid else initial_grid
+        self.age_grid = copy.deepcopy(self.grid)
+
 
     def reset(self):
         """Resetuje planszę do stanu początkowego."""
@@ -68,7 +73,6 @@ class Board:
         """Losowo wypełnia planszę komórkami.
         :param prob: prawdopodobieństwo żywej komórki
         """
-        import random
         for y in range(self.rows):
             for x in range(self.cols):
                 self.grid[y][x] = 1 if random.random() < prob else 0

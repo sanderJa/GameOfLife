@@ -4,13 +4,13 @@ class GameState:
     """
     Klasa łącząca planszę gry i zasady. Przechowuje bieżący stan gry.
     """
-    def __init__(self, rows, cols, rules):
+    def __init__(self, rows, cols, rules,initial_grid):
         """Inicjalizuje stan gry.
         :param rows: liczba wierszy planszy
         :param cols: liczba kolumn planszy
         :param rules: zasady gry (Rules)
         """
-        self.board = Board(rows, cols)
+        self.board = Board(rows, cols,initial_grid)
         self.rules = rules
 
 

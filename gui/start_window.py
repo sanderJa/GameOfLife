@@ -1,12 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
+
 from gui.main_window import MainWindow
+from gui.templates_window import TemplateSelectorWindow
 from logic.rules import Rules
+
 
 class StartWindow:
     """
    Okno startowe do konfiguracji początkowych parametrów gry.
     """
+
     def __init__(self, master):
         """
         Inicjalizuje startowe okno gry.
@@ -28,30 +32,25 @@ class StartWindow:
         style.configure("TLabelframe", background="#ffffff", font=("Segoe UI", 11, "bold"))
         style.configure("TLabelframe.Label", background="#ffffff")
 
-
-        title = ttk.Label(master, text="Gra w Życie – Konfiguracja", font=("Segoe UI", 18, "bold"), background="#f0f0f0")
+        title = ttk.Label(master, text="Gra w Życie – Konfiguracja", font=("Segoe UI", 18, "bold"),
+                          background="#f0f0f0")
         title.pack(pady=20)
-
 
         container = ttk.Frame(master, padding=20)
         container.pack(expand=True)
 
-
-        board_frame = ttk.Labelframe(container, text="Plansza", padding=15)
+        board_frame = ttk.Labelframe(container,text="Plansza", padding=15)
         board_frame.pack(fill="x", pady=10)
 
-        ttk.Label(board_frame, text=space+"Szerokość:").grid(row=0, column=0, sticky="n", padx=5, pady=5)
+        ttk.Label(board_frame, text=space + "Szerokość:").grid(row=0, column=0, sticky="n", padx=5, pady=5)
         self.entry_width = ttk.Entry(board_frame)
         self.entry_width.insert(0, "30")
         self.entry_width.grid(row=0, column=1, pady=5)
 
-        ttk.Label(board_frame, text=space+"Wysokość:").grid(row=1, column=0, sticky="ew", padx=5, pady=5)
+        ttk.Label(board_frame, text=space + "Wysokość:").grid(row=1, column=0, sticky="ew", padx=5, pady=5)
         self.entry_height = ttk.Entry(board_frame)
         self.entry_height.insert(0, "30")
         self.entry_height.grid(row=1, column=1, pady=5)
-
-
-
 
         rules_frame = ttk.Labelframe(container, text="Zasady życia", padding=15)
         rules_frame.pack(fill="x", pady=10)
@@ -71,7 +70,6 @@ class StartWindow:
         self.entry_age.insert(0, "10")
         self.entry_age.grid(row=2, column=1, pady=5)
 
-
         button_frame = ttk.Frame(container)
         button_frame.pack(pady=20)
 
@@ -83,6 +81,24 @@ class StartWindow:
 
         self.btn_start = ttk.Button(button_frame, text="Start", command=self.start_game)
         self.btn_start.grid(row=0, column=2, padx=10)
+
+    def open_templates(self):
+        """Otwiera okno wyboru szablonu i ustawia dane w polach."""
+        popup = tk.Toplevel(self.master)
+        TemplateSelectorWindow(popup, self.open_main_window_with_template)
+
+    def open_main_window_with_template(self, template):
+        """Zamknij StartWindow i otwórz MainWindow z wybranym szablonem."""
+        self.master.destroy()
+
+        grid = template.grid
+        rules = template.rules
+        height = len(grid)
+        width = len(grid[0]) if height > 0 else 0
+
+        root = tk.Tk()
+        MainWindow(root, width, height, rules, initial_grid=grid)
+        root.mainloop()
 
     def set_random_rules(self):
         """Ustawia losowe zasady gry w polach tekstowych."""
@@ -118,14 +134,3 @@ class StartWindow:
         root = tk.Tk()
         MainWindow(root, width, height, rules)
         root.mainloop()
-
-    def open_templates(self):
-        """Wyświetla okno wyboru szablonów."""
-        popup = tk.Toplevel(self.master)
-        popup.title("Wybierz szablon")
-        popup.geometry("300x200")
-        ttk.Label(popup, text="Szablony (do zaimplementowania):").pack(pady=10)
-        ttk.Button(popup, text="Glider").pack(pady=5)
-        ttk.Button(popup, text="Pulsar").pack(pady=5)
-        ttk.Button(popup, text="Acorn").pack(pady=5)
-

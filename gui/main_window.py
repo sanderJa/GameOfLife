@@ -11,7 +11,7 @@ class MainWindow:
     Główne okno gry – wyświetla planszę, kontrolki i obsługuje grę.
     """
 
-    def __init__(self, master, width, height, rules):
+    def __init__(self, master, width, height, rules, initial_grid=None):
         """Inicjalizuje główne okno gry.
                 :param master: root
                 :param width: szerokość planszy
@@ -25,6 +25,12 @@ class MainWindow:
         self.running = False
         self.drag_mode = None
 
+        # screen_width = self.master.winfo_screenwidth()
+        # screen_height = self.master.winfo_screenheight()
+        # x = (screen_width - self.master.winfo_reqwidth()) // 2
+        # y = (screen_height - self.master.winfo_reqheight()) // 2
+        # self.master.geometry(f"-{x}-{y}")
+
         style = ttk.Style()
         style.theme_use("clam")
         style.configure("TLabel", background="#f0f0f0", font=("Segoe UI", 10))
@@ -33,10 +39,11 @@ class MainWindow:
         style.configure("TLabelframe.Label", background="#f0f0f0")
         style.configure("TFrame", background="#f0f0f0")
 
-        self.state = GameState(height, width, rules)
+        self.state = GameState(height, width, rules, initial_grid)
 
         self._build_interface(width, height)
         self.update_canvas()
+        self.centred_window()
 
     def _build_interface(self, width, height):
         """Buduje cały interfejs użytkownika."""
@@ -102,7 +109,24 @@ class MainWindow:
 
         ttk.Button(section, text="Krok", command=self.step).pack(fill="x", pady=(2, 0))
         ttk.Button(section, text="Reset", command=self.reset).pack(fill="x", pady=(2, 0))
-        ttk.Button(section, text="Losowe pole", command=self.randomize).pack(fill="x", pady=(2, 2))
+        ttk.Button(section, text="Losowe pole", command=self.randomize).pack(fill="x", pady=(2, 5))
+
+        ttk.Label(section, text="Szybkość (ms):").pack(anchor="w")
+        self.scale_delay = tk.Scale(
+            section,
+            from_=5,
+            to=1000,
+            orient=tk.HORIZONTAL,
+            resolution=5,
+            length=150,
+            command=self.update_delay
+        )
+        self.scale_delay.set(self.delay)
+        self.scale_delay.pack(fill="x", pady=(0, 5))
+
+    def update_delay(self, value):
+        """Aktualizuje opóźnienie animacji na podstawie suwaka."""
+        self.delay = int(value)
 
     def _create_template_section(self):
         """Tworzy sekcję z szablonami i powrotem do startu."""
@@ -188,6 +212,7 @@ class MainWindow:
         """Losuje zasady gry."""
         self.state.rules = self.state.rules.generate_random()
         self.update_rules_entry()
+        self.update_canvas()
 
     def apply_rules(self):
         """Zastosowuje zasady z panelu."""
@@ -196,6 +221,7 @@ class MainWindow:
             survive = list(map(int, self.entry_survive.get().strip().split()))
             birth = list(map(int, self.entry_birth.get().strip().split()))
             self.state.apply_rules(Rules(birth, survive, age))
+            self.update_canvas()
         except ValueError:
             pass
 
@@ -225,18 +251,6 @@ class MainWindow:
 
         self.btn_save_template.config(text="Zachowaj nazwę", command=save_with_name)
 
-    def apply_rules_from_panel(self, rules):
-        """Callback z zewnętrznego panelu – aktualizuje zasady."""
-        self.state.apply_rules(rules)
-        self.update_rules_entry()
-
-    def load_template_from_window(self, template):
-        """Ładuje dane z szablonu."""
-        self.state = GameState(template.size[1], template.size[0], template.rules)
-        self.state.board.grid = template.grid
-        self.update_rules_entry()
-        self.update_canvas()
-
     def back_to_start(self):
         """Przechodzi do okna startowego."""
         from gui.start_window import StartWindow
@@ -244,3 +258,13 @@ class MainWindow:
         root = tk.Tk()
         StartWindow(root)
         root.mainloop()
+
+    def centred_window(self):
+        self.master.update_idletasks()
+        width_w = self.master.winfo_width()
+        height_w = self.master.winfo_height()
+        screen_width = self.master.winfo_screenwidth()
+        screen_height = self.master.winfo_screenheight()
+        x = (screen_width - width_w) // 2
+        y = (screen_height - height_w) // 2
+        self.master.geometry(f"{width_w}x{height_w}+{x}+{y}")
