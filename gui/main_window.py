@@ -25,12 +25,6 @@ class MainWindow:
         self.running = False
         self.drag_mode = None
 
-        # screen_width = self.master.winfo_screenwidth()
-        # screen_height = self.master.winfo_screenheight()
-        # x = (screen_width - self.master.winfo_reqwidth()) // 2
-        # y = (screen_height - self.master.winfo_reqheight()) // 2
-        # self.master.geometry(f"-{x}-{y}")
-
         style = ttk.Style()
         style.theme_use("clam")
         style.configure("TLabel", background="#f0f0f0", font=("Segoe UI", 10))
@@ -114,8 +108,8 @@ class MainWindow:
         ttk.Label(section, text="Szybkość (ms):").pack(anchor="w")
         self.scale_delay = tk.Scale(
             section,
-            from_=5,
-            to=1000,
+            from_=1000,
+            to=5,
             orient=tk.HORIZONTAL,
             resolution=5,
             length=150,

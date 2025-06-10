@@ -22,8 +22,7 @@ class StartWindow:
         self.master.configure(bg="#f0f0f0")
         self.master.resizable(False, False)
 
-        # Zmienna space jest dla wyrównania wszytkich elementów
-        space = "                            "
+
 
         style = ttk.Style()
         style.theme_use("clam")
@@ -32,14 +31,26 @@ class StartWindow:
         style.configure("TLabelframe", background="#ffffff", font=("Segoe UI", 11, "bold"))
         style.configure("TLabelframe.Label", background="#ffffff")
 
-        title = ttk.Label(master, text="Gra w Życie – Konfiguracja", font=("Segoe UI", 18, "bold"),
+        self._build_rules_board()
+        self._build_rules()
+        self._build_buttons()
+
+
+    def _build_rules_board(self):
+        """
+            Tworzy interfejs do konfiguracji planszy gry.
+        """
+        # Zmienna space jest dla wyrównania wszytkich elementów
+        space = "                            "
+
+        title = ttk.Label(self.master, text="Gra w Życie – Konfiguracja", font=("Segoe UI", 18, "bold"),
                           background="#f0f0f0")
         title.pack(pady=20)
 
-        container = ttk.Frame(master, padding=20)
-        container.pack(expand=True)
+        self.container = ttk.Frame(self.master, padding=20)
+        self.container.pack(expand=True)
 
-        board_frame = ttk.Labelframe(container,text="Plansza", padding=15)
+        board_frame = ttk.Labelframe(self.container, text="Plansza", padding=15)
         board_frame.pack(fill="x", pady=10)
 
         ttk.Label(board_frame, text=space + "Szerokość:").grid(row=0, column=0, sticky="n", padx=5, pady=5)
@@ -52,7 +63,13 @@ class StartWindow:
         self.entry_height.insert(0, "30")
         self.entry_height.grid(row=1, column=1, pady=5)
 
-        rules_frame = ttk.Labelframe(container, text="Zasady życia", padding=15)
+
+
+    def _build_rules(self):
+        """
+           Tworzy interfejs do konfiguracji zasad gry.
+        """
+        rules_frame = ttk.Labelframe(self.container, text="Zasady życia", padding=15)
         rules_frame.pack(fill="x", pady=10)
 
         ttk.Label(rules_frame, text="Przeżycie (np. 2 3):").grid(row=0, column=0, sticky="e", padx=5, pady=5)
@@ -70,7 +87,12 @@ class StartWindow:
         self.entry_age.insert(0, "10")
         self.entry_age.grid(row=2, column=1, pady=5)
 
-        button_frame = ttk.Frame(container)
+
+    def _build_buttons(self):
+        """
+            Tworzy przyciski sterujące aplikacją.
+        """
+        button_frame = ttk.Frame(self.container)
         button_frame.pack(pady=20)
 
         self.btn_random_rules = ttk.Button(button_frame, text="Losowe zasady", command=self.set_random_rules)
@@ -81,6 +103,7 @@ class StartWindow:
 
         self.btn_start = ttk.Button(button_frame, text="Start", command=self.start_game)
         self.btn_start.grid(row=0, column=2, padx=10)
+
 
     def open_templates(self):
         """Otwiera okno wyboru szablonu i ustawia dane w polach."""

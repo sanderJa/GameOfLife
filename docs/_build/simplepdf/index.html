@@ -1,0 +1,2865 @@
+<!DOCTYPE html>
+<html data-content_root="./" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   GameOfLife documentation
+  </title>
+  <link href="_static/pygments.css?v=d75fae25" rel="stylesheet" type="text/css"/>
+  <link href="_static/main.css?v=0eace31b" rel="stylesheet" type="text/css"/>
+  <script src="_static/documentation_options.js?v=33929acb">
+  </script>
+  <script src="_static/doctools.js?v=9bcbadda">
+  </script>
+  <script src="_static/sphinx_highlight.js?v=dc90522c">
+  </script>
+  <link href="genindex.html" rel="index" title="Index"/>
+  <link href="search.html" rel="search" title="Search"/>
+ </head>
+ <body>
+  <article class="dont-break" id="cover">
+   <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+     <p>
+     </p>
+    </div>
+    <!-- Cover middle -->
+    <div class="cover-middle">
+     <div class="title">
+      <h1 class="title-cover">
+       GameOfLife
+      </h1>
+      <p class="subtitle-cover">
+       Version
+      </p>
+      <span class="meta">
+      </span>
+     </div>
+     <!--
+      <div class="client-logo">
+        <img src="../data/logo_.png" alt="Logotipo">
+      </div>
+      -->
+    </div>
+    <!-- Footer -->
+    <div class="cover-footer">
+     <p>
+     </p>
+    </div>
+   </div>
+  </article>
+  <div aria-label="Main" class="sphinxsidebar" role="navigation">
+   <div class="sphinxsidebarwrapper">
+    <div>
+     <h3>
+      <a href="#">
+       Table of Contents
+      </a>
+     </h3>
+     <p class="caption" role="heading">
+      <span class="caption-text">
+       Contents:
+      </span>
+     </p>
+     <ul>
+      <li class="toctree-l1">
+       <a class="reference internal" href="#gameoflife-package">
+        GameOfLife package
+       </a>
+       <ul>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#subpackages">
+          Subpackages
+         </a>
+         <ul>
+          <li class="toctree-l3">
+           <a class="reference internal" href="#gameoflife-gui-namespace">
+            GameOfLife.gui namespace
+           </a>
+           <ul>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#submodules">
+              Submodules
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-gui-main-window-module">
+              GameOfLife.gui.main_window module
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-gui-start-window-module">
+              GameOfLife.gui.start_window module
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-gui-templates-window-module">
+              GameOfLife.gui.templates_window module
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="toctree-l3">
+           <a class="reference internal" href="#gameoflife-logic-namespace">
+            GameOfLife.logic namespace
+           </a>
+           <ul>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#submodules">
+              Submodules
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-logic-board-module">
+              GameOfLife.logic.board module
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-logic-game-state-module">
+              GameOfLife.logic.game_state module
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-logic-rules-module">
+              GameOfLife.logic.rules module
+             </a>
+            </li>
+            <li class="toctree-l4">
+             <a class="reference internal" href="#gameoflife-logic-template-module">
+              GameOfLife.logic.template module
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#submodules">
+          Submodules
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="#gameoflife-main-module">
+          GameOfLife.main module
+         </a>
+         <ul>
+          <li class="toctree-l3">
+           <a class="reference internal" href="#main">
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              main()
+             </span>
+            </code>
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="document">
+   <div class="documentwrapper">
+    <div class="bodywrapper">
+     <div class="body" role="main">
+      <section id="gameoflife-documentation">
+       <h1>
+        GameOfLife documentation
+        <a class="headerlink" href="#gameoflife-documentation" title="Link to this heading">
+         &para;
+        </a>
+       </h1>
+       <p>
+        Projekt &ldquo;Game of Life&rdquo; to gra symulacyjna oparta na automacie kom&oacute;rkowym zaproponowanym przez Johna Conwaya. Aplikacja zosta&lstrok;a napisana w j&eogon;zyku Python z wykorzystaniem biblioteki Tkinter do tworzenia graficznego interfejsu u&zdot;ytkownika.
+       </p>
+       <section id="funkcje-projektu">
+        <h2>
+         Funkcje projektu:
+         <a class="headerlink" href="#funkcje-projektu" title="Link to this heading">
+          &para;
+         </a>
+        </h2>
+        <ul class="simple">
+         <li>
+          <p>
+           Interfejs graficzny z siatk&aogon; kom&oacute;rek, kt&oacute;re mo&zdot;na aktywowa&cacute; klikni&eogon;ciem myszki.
+          </p>
+         </li>
+         <li>
+          <p>
+           Obs&lstrok;uga podstawowych zasad gry (np. narodziny, &sacute;mier&cacute; i przetrwanie kom&oacute;rek).
+          </p>
+         </li>
+         <li>
+          <p>
+           Mo&zdot;liwo&sacute;&cacute; definiowania w&lstrok;asnych regu&lstrok; gry.
+          </p>
+         </li>
+         <li>
+          <p>
+           Zapisywanie i wczytywanie szablon&oacute;w z katalogu
+           <cite>
+            resources/templates
+           </cite>
+           .
+          </p>
+         </li>
+         <li>
+          <p>
+           Okno startowe umo&zdot;liwiaj&aogon;ce wyb&oacute;r ustawie&nacute; gry.
+          </p>
+         </li>
+         <li>
+          <p>
+           Osobne okno do podgl&aogon;du i wyboru zapisanych szablon&oacute;w.
+          </p>
+         </li>
+         <li>
+          <p>
+           Mo&zdot;liwo&sacute;&cacute; pauzowania i wznawiania symulacji.
+          </p>
+         </li>
+         <li>
+          <p>
+           Czysty podzia&lstrok; logiki gry i interfejsu u&zdot;ytkownika.
+          </p>
+         </li>
+        </ul>
+       </section>
+       <section id="struktura-katalogow">
+        <h2>
+         Struktura katalog&oacute;w:
+         <a class="headerlink" href="#struktura-katalogow" title="Link to this heading">
+          &para;
+         </a>
+        </h2>
+        <ul class="simple">
+         <li>
+          <p>
+           <cite>
+            logic/
+           </cite>
+           &ndash; logika gry (np. zarz&aogon;dzanie siatk&aogon; i regu&lstrok;ami).
+          </p>
+         </li>
+         <li>
+          <p>
+           <cite>
+            gui/
+           </cite>
+           &ndash; interfejs graficzny u&zdot;ytkownika.
+          </p>
+         </li>
+         <li>
+          <p>
+           <cite>
+            resources/templates/
+           </cite>
+           &ndash; zapisane szablony wzor&oacute;w pocz&aogon;tkowych.
+          </p>
+         </li>
+         <li>
+          <p>
+           <cite>
+            main.py
+           </cite>
+           &ndash; punkt wej&sacute;cia do aplikacji.
+          </p>
+         </li>
+        </ul>
+       </section>
+       <section id="wymagania">
+        <h2>
+         Wymagania:
+         <a class="headerlink" href="#wymagania" title="Link to this heading">
+          &para;
+         </a>
+        </h2>
+        <ul class="simple">
+         <li>
+          <p>
+           Python 3.9 lub nowszy
+          </p>
+         </li>
+         <li>
+          <p>
+           Biblioteka standardowa (Tkinter)
+          </p>
+         </li>
+        </ul>
+       </section>
+       <section id="instrukcja-uruchomienia">
+        <h2>
+         Instrukcja uruchomienia:
+         <a class="headerlink" href="#instrukcja-uruchomienia" title="Link to this heading">
+          &para;
+         </a>
+        </h2>
+        <p>
+         Aby uruchomi&cacute; aplikacj&eogon;, wykonaj w terminalu:
+        </p>
+        <div class="highlight-bash notranslate">
+         <div class="highlight">
+          <pre><span></span>python<span class="w"> </span>main.py
+</pre>
+         </div>
+        </div>
+        <p>
+         &mdash;
+        </p>
+        <div class="toctree-wrapper compound">
+         <span id="document-GameOfLife">
+         </span>
+         <section id="module-GameOfLife">
+          <span id="gameoflife-package">
+          </span>
+          <h3>
+           GameOfLife package
+           <a class="headerlink" href="#module-GameOfLife" title="Link to this heading">
+            &para;
+           </a>
+          </h3>
+          <section id="subpackages">
+           <h4>
+            Subpackages
+            <a class="headerlink" href="#subpackages" title="Link to this heading">
+             &para;
+            </a>
+           </h4>
+           <div class="toctree-wrapper compound">
+            <span id="document-GameOfLife.gui">
+            </span>
+            <section id="module-GameOfLife.gui">
+             <span id="gameoflife-gui-namespace">
+             </span>
+             <h5>
+              GameOfLife.gui namespace
+              <a class="headerlink" href="#module-GameOfLife.gui" title="Link to this heading">
+               &para;
+              </a>
+             </h5>
+             <section id="submodules">
+              <h6>
+               Submodules
+               <a class="headerlink" href="#submodules" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+             </section>
+             <section id="module-GameOfLife.gui.main_window">
+              <span id="gameoflife-gui-main-window-module">
+              </span>
+              <h6>
+               GameOfLife.gui.main_window module
+               <a class="headerlink" href="#module-GameOfLife.gui.main_window" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.gui.main_window.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  MainWindow
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   master
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   width
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   height
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   rules
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   initial_grid
+                  </span>
+                 </span>
+                 <span class="o">
+                  <span class="pre">
+                   =
+                  </span>
+                 </span>
+                 <span class="default_value">
+                  <span class="pre">
+                   None
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 G&lstrok;&oacute;wne okno gry &ndash; wy&sacute;wietla plansz&eogon;, kontrolki i obs&lstrok;uguje gr&eogon;.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow._build_interface">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _build_interface
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     width
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     height
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow._build_interface">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow._build_interface" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Buduje ca&lstrok;y interfejs u&zdot;ytkownika.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow._create_buttons_section">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _create_buttons_section
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow._create_buttons_section">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow._create_buttons_section" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy sekcj&eogon; przycisk&oacute;w steruj&aogon;cych gr&aogon;.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow._create_exit_section">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _create_exit_section
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow._create_exit_section">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow._create_exit_section" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy sekcj&eogon; z szablonami i powrotem do startu.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow._create_rules_section">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _create_rules_section
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow._create_rules_section">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow._create_rules_section" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy sekcj&eogon; zasad gry.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow._create_template_section">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _create_template_section
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow._create_template_section">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow._create_template_section" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy sekcj&eogon; z szablonami i powrotem do startu.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.apply_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    apply_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.apply_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.apply_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zastosowuje zasady z panelu.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.back_to_start">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    back_to_start
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.back_to_start">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.back_to_start" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Przechodzi do okna startowego.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.centred_window">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    centred_window
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.centred_window">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.centred_window" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.on_mouse_down">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    on_mouse_down
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     event
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.on_mouse_down">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.on_mouse_down" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Okre&sacute;la tryb przeci&aogon;gania na podstawie klikni&eogon;cia.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.on_mouse_drag">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    on_mouse_drag
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     event
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.on_mouse_drag">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.on_mouse_drag" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Przeci&aogon;ganie mysz&aogon; w celu aktywacji/dezaktywacji kom&oacute;rek.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.randomize">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    randomize
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.randomize">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.randomize" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Losuje uk&lstrok;ad kom&oacute;rek.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.randomize_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    randomize_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.randomize_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.randomize_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Losuje zasady gry.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.reset">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    reset
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.reset">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.reset" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Czy&sacute;ci plansz&eogon;.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.run_loop">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    run_loop
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.run_loop">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.run_loop" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   P&eogon;tla animacji.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.save_template">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    save_template
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.save_template">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.save_template" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zapisuje aktualny szablon.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.step">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    step
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.step">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.step" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Wykonuje jeden krok symulacji.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.toggle_cell">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    toggle_cell
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     y
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     x
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.toggle_cell">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.toggle_cell" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Prze&lstrok;&aogon;cza stan kom&oacute;rki.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.toggle_run">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    toggle_run
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.toggle_run">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.toggle_run" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Startuje lub zatrzymuje animacj&eogon;.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.update_canvas">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    update_canvas
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.update_canvas">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.update_canvas" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Aktualizuje kolory kom&oacute;rek na podstawie stanu planszy.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.update_delay">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    update_delay
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     value
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.update_delay">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.update_delay" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Aktualizuje op&oacute;&zacute;nienie animacji na podstawie suwaka.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.main_window.MainWindow.update_rules_entry">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    update_rules_entry
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/main_window.html#MainWindow.update_rules_entry">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.main_window.MainWindow.update_rules_entry" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Aktualizuje pola wej&sacute;ciowe zasad.
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+             <section id="module-GameOfLife.gui.start_window">
+              <span id="gameoflife-gui-start-window-module">
+              </span>
+              <h6>
+               GameOfLife.gui.start_window module
+               <a class="headerlink" href="#module-GameOfLife.gui.start_window" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.gui.start_window.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  StartWindow
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   master
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 Okno startowe do konfiguracji pocz&aogon;tkowych parametr&oacute;w gry.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow._build_buttons">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _build_buttons
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow._build_buttons">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow._build_buttons" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy przyciski steruj&aogon;ce aplikacj&aogon;.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow._build_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _build_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow._build_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow._build_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy interfejs do konfiguracji zasad gry.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow._build_rules_board">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _build_rules_board
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow._build_rules_board">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow._build_rules_board" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy interfejs do konfiguracji planszy gry.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow.open_main_window_with_template">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    open_main_window_with_template
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     template
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow.open_main_window_with_template">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow.open_main_window_with_template" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zamknij StartWindow i otw&oacute;rz MainWindow z wybranym szablonem.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow.open_templates">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    open_templates
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow.open_templates">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow.open_templates" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Otwiera okno wyboru szablonu i ustawia dane w polach.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow.parse_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    parse_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow.parse_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow.parse_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Parsuje tekst z pola zasad do obiektu Rules.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow.set_random_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    set_random_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow.set_random_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow.set_random_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Ustawia losowe zasady gry w polach tekstowych.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.start_window.StartWindow.start_game">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    start_game
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/start_window.html#StartWindow.start_game">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.start_window.StartWindow.start_game" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Uruchamia g&lstrok;&oacute;wne okno gry z podanymi parametrami.
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+             <section id="module-GameOfLife.gui.templates_window">
+              <span id="gameoflife-gui-templates-window-module">
+              </span>
+              <h6>
+               GameOfLife.gui.templates_window module
+               <a class="headerlink" href="#module-GameOfLife.gui.templates_window" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.gui.templates_window.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  TemplateSelectorWindow
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   master
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   on_template_selected
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow._build_interface">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _build_interface
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow._build_interface">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow._build_interface" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy GUI.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow._clear_preview">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _clear_preview
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow._clear_preview">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow._clear_preview" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow._update_preview">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    _update_preview
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     template
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow._update_preview">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow._update_preview" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Aktualizuje podgl&aogon;d zasad i planszy.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow.confirm_selection">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    confirm_selection
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow.confirm_selection">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow.confirm_selection" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zatwierdza wyb&oacute;r szablonu i otwiera g&lstrok;&oacute;wne okno gry z szablonem.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow.delete_template">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    delete_template
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow.delete_template">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow.delete_template" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Usuwa wybrany szablon po potwierdzeniu.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.gui.templates_window.TemplateSelectorWindow.on_select">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    on_select
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     event
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/gui/templates_window.html#TemplateSelectorWindow.on_select">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.gui.templates_window.TemplateSelectorWindow.on_select" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Obs&lstrok;uguje wyb&oacute;r szablonu z listy.
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+            </section>
+            <span id="document-GameOfLife.logic">
+            </span>
+            <section id="module-GameOfLife.logic">
+             <span id="gameoflife-logic-namespace">
+             </span>
+             <h5>
+              GameOfLife.logic namespace
+              <a class="headerlink" href="#module-GameOfLife.logic" title="Link to this heading">
+               &para;
+              </a>
+             </h5>
+             <section id="submodules">
+              <h6>
+               Submodules
+               <a class="headerlink" href="#submodules" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+             </section>
+             <section id="module-GameOfLife.logic.board">
+              <span id="gameoflife-logic-board-module">
+              </span>
+              <h6>
+               GameOfLife.logic.board module
+               <a class="headerlink" href="#module-GameOfLife.logic.board" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.logic.board.Board">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.logic.board.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  Board
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   rows
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   cols
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   initial_grid
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.logic.board.Board" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 Klasa reprezentuj&aogon;ca plansz&eogon; gry i jej stan.
+Przechowuje kom&oacute;rki i wiek kom&oacute;rek.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.board.Board.get_neighbors">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    get_neighbors
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     y
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     x
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board.get_neighbors">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.board.Board.get_neighbors" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zwraca liczb&eogon; &zdot;ywych s&aogon;siad&oacute;w kom&oacute;rki.
+:param y: wiersz
+:param x: kolumna
+:return: liczba s&aogon;siad&oacute;w
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.board.Board.randomize">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    randomize
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     prob
+                    </span>
+                   </span>
+                   <span class="o">
+                    <span class="pre">
+                     =
+                    </span>
+                   </span>
+                   <span class="default_value">
+                    <span class="pre">
+                     0.2
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board.randomize">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.board.Board.randomize" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Losowo wype&lstrok;nia plansz&eogon; kom&oacute;rkami.
+:param prob: prawdopodobie&nacute;stwo &zdot;ywej kom&oacute;rki
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.board.Board.reset">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    reset
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board.reset">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.board.Board.reset" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Resetuje plansz&eogon; do stanu pocz&aogon;tkowego.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.board.Board.step">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    step
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     rules
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board.step">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.board.Board.step" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Wykonuje jeden krok symulacji.
+:param rules: zasady gry
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.board.Board.toggle_cell">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    toggle_cell
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     y
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     x
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/board.html#Board.toggle_cell">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.board.Board.toggle_cell" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zamienia stan kom&oacute;rki na przeciwny.
+:param y: wiersz
+:param x: kolumna
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+             <section id="module-GameOfLife.logic.game_state">
+              <span id="gameoflife-logic-game-state-module">
+              </span>
+              <h6>
+               GameOfLife.logic.game_state module
+               <a class="headerlink" href="#module-GameOfLife.logic.game_state" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.logic.game_state.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  GameState
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   rows
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   cols
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   rules
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   initial_grid
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.logic.game_state.GameState" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 Klasa &lstrok;&aogon;cz&aogon;ca plansz&eogon; gry i zasady. Przechowuje bie&zdot;&aogon;cy stan gry.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState.apply_rules">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    apply_rules
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     rules
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState.apply_rules">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.game_state.GameState.apply_rules" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zast&eogon;puje zasady gry nowymi.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState.randomize">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    randomize
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     prob
+                    </span>
+                   </span>
+                   <span class="o">
+                    <span class="pre">
+                     =
+                    </span>
+                   </span>
+                   <span class="default_value">
+                    <span class="pre">
+                     0.2
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState.randomize">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.game_state.GameState.randomize" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Losowo ustawia kom&oacute;rki na planszy.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState.reset">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    reset
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState.reset">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.game_state.GameState.reset" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Resetuje plansz&eogon; gry.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState.step">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    step
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState.step">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.game_state.GameState.step" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Wykonuje jeden krok symulacji.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.game_state.GameState.toggle_cell">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    toggle_cell
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     y
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     x
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/game_state.html#GameState.toggle_cell">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.game_state.GameState.toggle_cell" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Prze&lstrok;&aogon;cza stan kom&oacute;rki.
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+             <section id="module-GameOfLife.logic.rules">
+              <span id="gameoflife-logic-rules-module">
+              </span>
+              <h6>
+               GameOfLife.logic.rules module
+               <a class="headerlink" href="#module-GameOfLife.logic.rules" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.logic.rules.Rules">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.logic.rules.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  Rules
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   birth
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   survive
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   age
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/logic/rules.html#Rules">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.logic.rules.Rules" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 Klasa reprezentuj&aogon;ca zasady gry w &zdot;ycie.
+Okre&sacute;la warunki przetrwania i narodzin kom&oacute;rek.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.rules.Rules.generate_random">
+                  <em class="property">
+                   <span class="k">
+                    <span class="pre">
+                     static
+                    </span>
+                   </span>
+                   <span class="w">
+                   </span>
+                  </em>
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    generate_random
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/rules.html#Rules.generate_random">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.rules.Rules.generate_random" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Generuje losowe zasady gry.
+:return: instancja Rules z losowymi warto&sacute;ciami
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.rules.Rules.should_live">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    should_live
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     alive
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     neighbors
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/rules.html#Rules.should_live">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.rules.Rules.should_live" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Okre&sacute;la, czy kom&oacute;rka powinna by&cacute; &zdot;ywa w nast&eogon;pnym kroku.
+:param alive: czy kom&oacute;rka jest aktualnie &zdot;ywa
+:param neighbors: liczba &zdot;ywych s&aogon;siad&oacute;w
+:return: True je&sacute;li kom&oacute;rka ma by&cacute; &zdot;ywa, False w przeciwnym razie
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+             <section id="module-GameOfLife.logic.template">
+              <span id="gameoflife-logic-template-module">
+              </span>
+              <h6>
+               GameOfLife.logic.template module
+               <a class="headerlink" href="#module-GameOfLife.logic.template" title="Link to this heading">
+                &para;
+               </a>
+              </h6>
+              <dl class="py class">
+               <dt class="sig sig-object py" id="GameOfLife.logic.template.Template">
+                <em class="property">
+                 <span class="k">
+                  <span class="pre">
+                   class
+                  </span>
+                 </span>
+                 <span class="w">
+                 </span>
+                </em>
+                <span class="sig-prename descclassname">
+                 <span class="pre">
+                  GameOfLife.logic.template.
+                 </span>
+                </span>
+                <span class="sig-name descname">
+                 <span class="pre">
+                  Template
+                 </span>
+                </span>
+                <span class="sig-paren">
+                 (
+                </span>
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   name
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   grid
+                  </span>
+                 </span>
+                </em>
+                ,
+                <em class="sig-param">
+                 <span class="n">
+                  <span class="pre">
+                   rules
+                  </span>
+                 </span>
+                </em>
+                <span class="sig-paren">
+                 )
+                </span>
+                <a class="reference internal" href="_modules/GameOfLife/logic/template.html#Template">
+                 <span class="viewcode-link">
+                  <span class="pre">
+                   [source]
+                  </span>
+                 </span>
+                </a>
+                <a class="headerlink" href="#GameOfLife.logic.template.Template" title="Link to this definition">
+                 &para;
+                </a>
+               </dt>
+               <dd>
+                <p>
+                 Bases:
+                 <code class="xref py py-class docutils literal notranslate">
+                  <span class="pre">
+                   object
+                  </span>
+                 </code>
+                </p>
+                <p>
+                 Klasa reprezentuj&aogon;ca szablon (template) gry.
+Zawiera rozmiar, stan planszy i zasady.
+                </p>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.template.Template.from_dict">
+                  <em class="property">
+                   <span class="k">
+                    <span class="pre">
+                     static
+                    </span>
+                   </span>
+                   <span class="w">
+                   </span>
+                  </em>
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    from_dict
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     data
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/template.html#Template.from_dict">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.template.Template.from_dict" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Tworzy instancj&eogon; szablonu z danych s&lstrok;ownikowych.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.template.Template.load_templates">
+                  <em class="property">
+                   <span class="k">
+                    <span class="pre">
+                     static
+                    </span>
+                   </span>
+                   <span class="w">
+                   </span>
+                  </em>
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    load_templates
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     directory
+                    </span>
+                   </span>
+                   <span class="o">
+                    <span class="pre">
+                     =
+                    </span>
+                   </span>
+                   <span class="default_value">
+                    <span class="pre">
+                     './resources/templates'
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/template.html#Template.load_templates">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.template.Template.load_templates" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Wczytuje wszystkie szablony z plik&oacute;w JSON w folderze.
+Zwraca list&eogon; krotek: (nazwa_szablonu, Template)
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.template.Template.save_template">
+                  <em class="property">
+                   <span class="k">
+                    <span class="pre">
+                     static
+                    </span>
+                   </span>
+                   <span class="w">
+                   </span>
+                  </em>
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    save_template
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     template
+                    </span>
+                   </span>
+                  </em>
+                  ,
+                  <em class="sig-param">
+                   <span class="n">
+                    <span class="pre">
+                     directory
+                    </span>
+                   </span>
+                   <span class="o">
+                    <span class="pre">
+                     =
+                    </span>
+                   </span>
+                   <span class="default_value">
+                    <span class="pre">
+                     './resources/templates/'
+                    </span>
+                   </span>
+                  </em>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/template.html#Template.save_template">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.template.Template.save_template" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zapisuje szablon do foldera &lsquo;templates&rsquo;. Je&sacute;li plik ju&zdot; istnieje, zg&lstrok;asza wyj&aogon;tek.
+                  </p>
+                 </dd>
+                </dl>
+                <dl class="py method">
+                 <dt class="sig sig-object py" id="GameOfLife.logic.template.Template.to_dict">
+                  <span class="sig-name descname">
+                   <span class="pre">
+                    to_dict
+                   </span>
+                  </span>
+                  <span class="sig-paren">
+                   (
+                  </span>
+                  <span class="sig-paren">
+                   )
+                  </span>
+                  <a class="reference internal" href="_modules/GameOfLife/logic/template.html#Template.to_dict">
+                   <span class="viewcode-link">
+                    <span class="pre">
+                     [source]
+                    </span>
+                   </span>
+                  </a>
+                  <a class="headerlink" href="#GameOfLife.logic.template.Template.to_dict" title="Link to this definition">
+                   &para;
+                  </a>
+                 </dt>
+                 <dd>
+                  <p>
+                   Zwraca dane szablonu jako s&lstrok;ownik.
+                  </p>
+                 </dd>
+                </dl>
+               </dd>
+              </dl>
+             </section>
+            </section>
+           </div>
+          </section>
+          <section id="submodules">
+           <h4>
+            Submodules
+            <a class="headerlink" href="#submodules" title="Link to this heading">
+             &para;
+            </a>
+           </h4>
+          </section>
+          <section id="module-GameOfLife.main">
+           <span id="gameoflife-main-module">
+           </span>
+           <h4>
+            GameOfLife.main module
+            <a class="headerlink" href="#module-GameOfLife.main" title="Link to this heading">
+             &para;
+            </a>
+           </h4>
+           <dl class="py function">
+            <dt class="sig sig-object py" id="GameOfLife.main.main">
+             <span class="sig-prename descclassname">
+              <span class="pre">
+               GameOfLife.main.
+              </span>
+             </span>
+             <span class="sig-name descname">
+              <span class="pre">
+               main
+              </span>
+             </span>
+             <span class="sig-paren">
+              (
+             </span>
+             <span class="sig-paren">
+              )
+             </span>
+             <a class="reference internal" href="_modules/GameOfLife/main.html#main">
+              <span class="viewcode-link">
+               <span class="pre">
+                [source]
+               </span>
+              </span>
+             </a>
+             <a class="headerlink" href="#GameOfLife.main.main" title="Link to this definition">
+              &para;
+             </a>
+            </dt>
+            <dd>
+             <p>
+              Plik main uruchamia ca&lstrok;y program.
+             </p>
+            </dd>
+           </dl>
+          </section>
+         </section>
+        </div>
+       </section>
+      </section>
+      <div class="clearer">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="clearer">
+   </div>
+  </div>
+  <article id="back-cover">
+   <div class="container">
+    <div class="back-cover-footer">
+     <p>
+      &copy; Copyright 2025, Author.
+     </p>
+     <p>
+      Created using
+      <a href="http://sphinx-doc.org/">
+       Sphinx
+      </a>
+      8.2.3.
+     </p>
+    </div>
+   </div>
+  </article>
+ </body>
+</html>
